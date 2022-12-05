@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  
+  <title>Fake API Client</title>
+</head>
+<body>
+ <!-- <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px;" id="home">
+    <img src="https://fs-prod-cdn.nintendo-europe.com/media/images/11_square_images/games_18/super_nintendo_4/SQ_SNES_SuperMarioKart_image500w.jpg" alt="Hamburger Catering" width="1600" height="500">
+  </header> -->
+
+  <div class="container-xl">
+
+    <div class="row">
+      <div class="col-12 my-5">
+        <h1 class="display-4 text-center"><span class="badge badge-secondary mr-1">My</span><span class="badge badge-success">Games <i class="bi bi-controller"></i></span></h1>
+      </div>
+
+      <div class="col-12 my-5">
+        <h3 class="border-bottom mb-4 pb-2">Add a new Games</h3>
+        <form method="post">
+          <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label text-right">Title</label>
+            <div class="col-sm-10">
+              <input type="text" id="title" name="title" class="form-control" required autofocus>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="artist" class="col-sm-2 col-form-label text-right">Artist</label>
+            <div class="col-sm-10">
+              <input type="text" id="artist" name="artist" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="developer" class="col-sm-2 col-form-label text-right">Developer</label>
+            <div class="col-sm-10">
+              <input type="text" id="developer" name="developer" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="publisher" class="col-sm-2 col-form-label text-right">Publisher</label>
+            <div class="col-sm-10">
+              <input type="text" id="publisher" name="publisher" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="programmer" class="col-sm-2 col-form-label text-right">Programmer</label>
+            <div class="col-sm-10">
+              <input type="text" id="programmer" name="programmer" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="composer" class="col-sm-2 col-form-label text-right">Composer</label>
+            <div class="col-sm-10">
+              <input type="text" id="composer" name="composer" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="engine" class="col-sm-2 col-form-label text-right">Engine</label>
+            <div class="col-sm-10">
+              <input type="text" id="engine" name="engine" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row" id="myForm">
+            <label for="" class="col-sm-2 col-form-label text-right">Genre</label>
+            <div class="col-sm-10 pt-2">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="action-adventure" name="genre[]" value="Action-adventure" required>
+                <label class="form-check-label" for="action-adventure">Action-adventure</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="hack and slash" name="genre[]" value="Hack and slash" required>
+                <label class="form-check-label" for="hack and slash">Hack and slash</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="sports" name="genre[]" value="Sports" required>
+                <label class="form-check-label" for="sports">Sports</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="moba" name="genre[]" value="Moba" required>
+                <label class="form-check-label" for="moba">Moba</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="puzzle" name="genre[]" value="Puzzle" required>
+                <label class="form-check-label" for="puzzle">Puzzle</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="rpg" name="genre[]" value="Rpg" required>
+                <label class="form-check-label" for="rpg">Rpg</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="real-time strategy" name="genre[]" value="Real-time strategy" required>
+                <label class="form-check-label" for="real-time strategy">Real-time strategy</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="fps" name="genre[]" value="Fps" required>
+                <label class="form-check-label" for="fps">Fps</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="date_released" class="col-sm-2 col-form-label text-right">Release Date</label>
+            <div class="col-sm-10">
+              <input type="date" id="date_released" name="date_released" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-2 col-form-label text-right">Game Lengths</label>
+            <div class="col-sm-10 pt-2">
+              <div class="form-check form-check-inline">
+                <input class="form-control" type="number" id="hours" name="hours" value="0" required>
+                <label class="col-form-label ml-2" for="hours">Hours</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-control" type="number" id="mins" name="mins" value="0" required>
+                <label class="col-form-label ml-2" for="mins">mins</label>
+              </div>
+            </div>
+          </div>
+          <div class="text-right">
+            <button type="submit" class="btn btn-primary btn-lg px-3" id="add" name="add"><i class="bi bi-plus-circle-fill"></i> Add</button>
+          </div> 
+        </form>
+      </div>
+
+      <div class="col-12 my-3">
+        <h3 class="border-bottom mb-4 pb-2">Game List <i class="bi bi-list"></i></h3>
+        <table class="table table-striped table-hover" id="playListTable">
+          
+          <tbody>
+            <tr>
+              <th>Title</th>
+              <th>Artist</th>
+              <th>Developer</th>
+              <th>Publisher</th>
+              <th>Programmer</th>
+              <th>Composer</th>
+              <th>Engine</th>
+              <th>Genre</th>
+              <th>DateReleased</th>
+              <th>Duration</th>
+              <th>Remove</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js" integrity="sha512-mULnawDVcCnsk9a4aG1QLZZ6rcce/jSzEGqUkeOLy0b6q0+T6syHrxlsAGH7ZVoqC93Pd0lBqd6WguPWih7VHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function fetch_data() {
+      var str = "";
+      $.ajax({
+        type: "GET",
+        url: "http://localhost/fake-api/fake-api-server/read.php",
+        success: function(response) {
+          var data = JSON.parse(response);
+          $.each(data, function(i, item) {
+            str += `
+                  <tr ${item.id}>
+                    <td>${item.title}</td>
+                    <td>${item.artist}</td>
+                    <td>${item.developer}</td>
+                    <td>${item.publisher}</td>
+                    <td>${item.programmer}</td>
+                    <td>${item.composer}</td>
+                    <td>${item.engine}</td>
+                    <td>${item.genre}</td>
+                    <td>${item.date_released}</td>
+                    <td>${item.duration.hours} hours and ${item.duration.mins} mins</td>
+                    <td><button type="button" class="btn btn-danger" onclick = "deletedata(${item.id})"><i class="bi bi-trash"></i></button></td>
+                  </tr>
+            `;
+          });
+          $("#playListTable").find("tr:gt(0)").remove();
+          $("#playListTable > tbody:last-child").append(str);
+        }
+      });
+    }
+
+    function post_data() {
+      $.ajax({
+        type: "POST",
+        url: "http://localhost/fake-api/fake-api-server/create.php",
+        data: $("form").serialize(),
+        success: function(response) {
+          if(response == 'success') {
+            $("#title").val("");
+            $("#artist").val("");
+            $("#developer").val("");
+            $("#publisher").val("");
+            $("#programmer").val("");
+            $("#composer").val("");
+            $("#engine").val("");
+            $("#date_released").val("");
+            $("#hours").val("");
+            $("#mins").val("");
+
+            $(".form-check-input").each(function() {
+              $(this).prop('checked', false);
+            });
+
+            $("#title").focus();
+
+            fetch_data();
+          }
+        }
+      });
+    }
+
+    function deletedata(id) {
+      if(confirm('are you sure you want to delete?')){
+    $(document).ready(function(){
+      $.ajax({
+
+        type: "POST",
+        url: "http://localhost/fake-api/fake-api-server/delete.php",
+        data: {
+          id: id,
+          action : "delete"
+        },
+        success:function(response){
+          if(response == 1) {
+            alert("Data deleted");
+            $("#title").val("");
+            $("#artist").val("");
+            $("#developer").val("");
+            $("#publisher").val("");
+            $("#programmer").val("");
+            $("#composer").val("");
+            $("#engine").val("");
+            $("#date_released").val("");
+            $("#mins").val("");
+            $("#secs").val("");
+            fetch_data();
+            document.getElementById(id).style.display ="";
+
+          }
+          else if(response == 0){
+            alert("data cannot be deleted");
+          }
+        }
+      });
+    });
+     }
+    }
+    
+    $(document).ready(function() {
+      fetch_data();
+
+      $("#add").click(function(e) {
+        e.preventDefault;
+        post_data();
+      });
+    });
+  </script>
+</body>
+</html>
